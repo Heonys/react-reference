@@ -5,8 +5,11 @@ import Button from "@mui/material/Button";
 const Header = () => {
   return (
     <>
-      <Link to={`recyclerview`}>
+      <Link to={`/recyclerview`}>
         <Button>Recycler view</Button>
+      </Link>
+      <Link to={`/select`}>
+        <Button>Counter</Button>
       </Link>
     </>
   );
