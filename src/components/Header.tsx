@@ -11,6 +11,9 @@ const Header = () => {
       <Link to={`/select`}>
         <Button>Counter</Button>
       </Link>
+      <Link to={`/loginform`}>
+        <Button>LoginForm</Button>
+      </Link>
     </>
   );
 };
