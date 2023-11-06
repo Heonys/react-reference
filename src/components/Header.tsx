@@ -14,6 +14,9 @@ const Header = () => {
       <Link to={`/loginform`}>
         <Button>LoginForm</Button>
       </Link>
+      <Link to={`/lazyimage`}>
+        <Button>LazyImage</Button>
+      </Link>
     </>
   );
 };

@@ -1,9 +1,17 @@
-import React from "react";
+import React, { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import RecyclerviewPage from "../pages/RecyclerviewPage";
-import Select from "../components/Select";
-import LoginForm from "../pages/LoginForm";
+
+const fakeDelay = (promise: Promise<any>) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 500);
+  }).then(() => promise);
+};
+
+const RecyclerviewPage = lazy(() => fakeDelay(import("../pages/RecyclerviewPage")));
+const Select = lazy(() => fakeDelay(import("../components/Select")));
+const LoginFormPage = lazy(() => fakeDelay(import("../pages/LoginFormPage")));
+const LazyImagePage = lazy(() => fakeDelay(import("../pages/LazyImagePage")));
 
 const router = createBrowserRouter([
   {
@@ -15,7 +23,8 @@ const router = createBrowserRouter([
         path: "/select",
         element: <Select label="드롭다운" onChange={() => {}} options={["1", "2"]} />,
       },
-      { path: "/loginform", element: <LoginForm /> },
+      { path: "/loginform", element: <LoginFormPage /> },
+      { path: "/lazyimage", element: <LazyImagePage /> },
     ],
   },
 ]);

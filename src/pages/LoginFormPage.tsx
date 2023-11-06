@@ -1,8 +1,7 @@
 //@ts-nocheck
-import React from "react";
 import Form from "../components/Form";
 
-const LoginForm = () => {
+const LoginFormPage = () => {
   function validate(value) {
     const error = { email: "", password: "" };
     if (!value.email) error.email = "이메일을 입력하세요";
@@ -25,4 +24,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default LoginFormPage;

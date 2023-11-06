@@ -26,8 +26,9 @@ const Recyclerview = ({ items }: Props) => {
   const handleScroll = () => {
     if (containerRef.current) {
       const { scrollTop } = containerRef.current;
-
       const newStartIdx = Math.floor(scrollTop / itemSize);
+      console.log(newStartIdx);
+
       const visibleItemsCount = Math.ceil(window.innerHeight / itemSize) + 10;
       setStartIndex(newStartIdx);
       setEndIndex(newStartIdx + visibleItemsCount);
@@ -54,7 +55,7 @@ const Recyclerview = ({ items }: Props) => {
           position: relative;
         `}
       >
-        {items.slice(startIndex, endIndex).map((item, index) => {
+        {items.slice(startIndex, endIndex).map((_, index) => {
           return (
             <li
               css={css`
