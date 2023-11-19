@@ -12,6 +12,7 @@ const RecyclerviewPage = lazy(() => fakeDelay(import("../pages/RecyclerviewPage"
 const Select = lazy(() => fakeDelay(import("../components/Select")));
 const LoginFormPage = lazy(() => fakeDelay(import("../pages/LoginFormPage")));
 const LazyImagePage = lazy(() => fakeDelay(import("../pages/LazyImagePage")));
+const InfinityScrollPage = lazy(() => fakeDelay(import("../pages/InfinityScrollPage")));
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       },
       { path: "/loginform", element: <LoginFormPage /> },
       { path: "/lazyimage", element: <LazyImagePage /> },
+      { path: "/infinity", element: <InfinityScrollPage /> },
     ],
   },
 ]);

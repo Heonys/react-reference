@@ -8,10 +8,8 @@ import LoadingSpinner from "./components/LoadingSpinner";
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <Suspense fallback={<LoadingSpinner />}>
-    <React.StrictMode>
-      <SWRConfigContext>
-        <RouterProvider router={router} />
-      </SWRConfigContext>
-    </React.StrictMode>
+    <SWRConfigContext>
+      <RouterProvider router={router} />
+    </SWRConfigContext>
   </Suspense>
 );

@@ -4,20 +4,23 @@ import Button from "@mui/material/Button";
 
 const Header = () => {
   return (
-    <>
-      <Link to={`/recyclerview`}>
-        <Button>Recycler view</Button>
-      </Link>
-      <Link to={`/select`}>
-        <Button>Counter</Button>
-      </Link>
-      <Link to={`/loginform`}>
-        <Button>LoginForm</Button>
+    <nav>
+      <Link to={`/infinity`}>
+        <Button variant="outlined">Infinity Scroll</Button>
       </Link>
       <Link to={`/lazyimage`}>
-        <Button>LazyImage</Button>
+        <Button variant="outlined">LazyImage</Button>
       </Link>
-    </>
+      <Link to={`/loginform`}>
+        <Button variant="outlined">LoginForm</Button>
+      </Link>
+      <Link to={`/select`}>
+        <Button variant="outlined">Compound Pattern</Button>
+      </Link>
+      <Link to={`/recyclerview`}>
+        <Button variant="outlined">Recycler view</Button>
+      </Link>
+    </nav>
   );
 };
 
