@@ -13,6 +13,8 @@ const Select = lazy(() => fakeDelay(import("../components/Select")));
 const LoginFormPage = lazy(() => fakeDelay(import("../pages/LoginFormPage")));
 const LazyImagePage = lazy(() => fakeDelay(import("../pages/LazyImagePage")));
 const InfinityScrollPage = lazy(() => fakeDelay(import("../pages/InfinityScrollPage")));
+const TestPage = lazy(() => import("../pages/TestPage"));
+const FruitSelect = lazy(() => import("../pages/WooahanSelectBox"));
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,8 @@ const router = createBrowserRouter([
       { path: "/loginform", element: <LoginFormPage /> },
       { path: "/lazyimage", element: <LazyImagePage /> },
       { path: "/infinity", element: <InfinityScrollPage /> },
+      { path: "/test", element: <TestPage /> },
+      { path: "/woo", element: <FruitSelect /> },
     ],
   },
 ]);
