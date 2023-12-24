@@ -1,5 +1,5 @@
 import React from "react";
-import LoginForm from "./practice/LoginForm";
+import LoginForm from "../components/form/LoginForm";
 
 const Counter = () => {
   return <LoginForm />;

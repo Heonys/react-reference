@@ -1,7 +1,12 @@
 import { Form } from "./Form";
 
+type FormType = {
+  email: string;
+  password: string;
+};
+
 const LoginForm = () => {
-  function validate(values) {
+  function validate(values: FormType) {
     const error = { email: "", password: "" };
     if (!values.email) error.email = "이메일을 입력 해주세요";
     if (!values.password) error.password = "패스워드를 입력 해주세요";
