@@ -7,15 +7,14 @@ const fruits = {
   orange: "오렌지",
 };
 
-export type Fruit = keyof typeof fruits;
+type Fruit = keyof typeof fruits;
 
 const FruitSelect = () => {
-  const [fruit, setFruit] = useState<Fruit | undefined>();
-
+  const [fruit, setFruit] = useState<Fruit | undefined>(undefined);
   return (
     <Select
       id="fruitSelect"
-      className="fruitSelctBox"
+      className="fruitSelectBox"
       options={fruits}
       selectedOption={fruit}
       onChange={setFruit}

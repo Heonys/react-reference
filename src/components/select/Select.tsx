@@ -12,22 +12,18 @@ const theme = {
     black: "#000000",
   },
 };
-
 type Theme = typeof theme;
-type Color = keyof Theme["color"];
 type FontSize = keyof Theme["fontSize"];
+type Color = keyof Theme["color"];
 
 type StyledProps = {
-  color: Color;
   fontSize: FontSize;
+  color: Color;
 };
-
 const StyledSelect = styled.select<StyledProps>`
-  color: ${({ color }) => theme.color[color]};
   font-size: ${({ fontSize }) => theme.fontSize[fontSize]};
+  color: ${({ color }) => theme.color[color]};
 `;
-
-type NativeSelectProps = React.ComponentPropsWithoutRef<"select">;
 
 type SelectProps<OptionType> = {
   options: OptionType;
@@ -35,6 +31,8 @@ type SelectProps<OptionType> = {
   onChange: (state: keyof OptionType) => void;
 } & Omit<NativeSelectProps, "onChange" | "value"> &
   Partial<StyledProps>;
+
+type NativeSelectProps = React.ComponentPropsWithoutRef<"select">;
 
 const Select = <OptionType extends Record<string, string>>({
   options,
@@ -44,13 +42,13 @@ const Select = <OptionType extends Record<string, string>>({
   fontSize = "default",
   ...restProps
 }: SelectProps<OptionType>) => {
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange(event.target.value);
   };
 
   return (
     <StyledSelect
-      onChange={handleSelectChange}
+      onChange={handleChange}
       value={selectedOption}
       color={color}
       fontSize={fontSize}

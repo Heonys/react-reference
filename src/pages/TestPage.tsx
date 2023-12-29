@@ -1,8 +1,7 @@
 import React from "react";
-import LoginForm from "../components/form/LoginForm";
 
-const Counter = () => {
-  return <LoginForm />;
+const TestPage = () => {
+  return <div>test</div>;
 };
 
-export default Counter;
+export default TestPage;
